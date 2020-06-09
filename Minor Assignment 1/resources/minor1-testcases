@@ -1,0 +1,63 @@
+; problem 1
+
+(has-solution 4 6 20)
+(not (has-solution 4 6 119))
+(has-solution 120 150 1020)
+(not (has-solution 120 150 140))
+
+; problem 2
+
+(= (sub 55 12) 43)
+(= (sub 9 5) 4)
+(= (sub 78971213 6712471) 72258742)
+
+; problem 3
+
+(= (ak-mult 34 3) 102)
+(= (ak-mult 2 5) 10)
+(= (ak-mult 52 656) 34112)
+
+; problem 4
+
+(equal? (div 10 3) (cons (quotient 10 3) (remainder 10 3))) 
+(equal? (div 8812 521) (cons (quotient 8812 521) (remainder 8812 521))) 
+(equal? (div 71 5) (cons (quotient 71 5) (remainder 71 5))) 
+
+; problem 5
+
+(let ([ans (coeffs 81 27)])
+    (= (+ (* 81 (car ans)) (* 27 (cdr ans))) (gcd 81 27)))
+(let ([ans (coeffs 100 20)])
+    (= (+ (* 100 (car ans)) (* 20 (cdr ans))) (gcd 100 20)))
+(let ([ans (coeffs 715212 5631)])
+    (= (+ (* 715212 (car ans)) (* 5631 (cdr ans))) (gcd 715212 5631)))
+
+;problem 6
+
+(= (modexp 12 5 5) 2)
+(= (modexp 19 78 100) 41)
+(= (modexp 52 7 21) 10)
+
+;problem 7
+
+(= (carmichael 1) 561)
+(= (carmichael 3) 1729)
+
+;problem 8
+
+(= (modulo (* 3 (inverse 3 11)) 11) 1)
+(= (modulo (* 67 (inverse 67 817)) 817) 1)
+(= (inverse 8 1000) -1)
+
+;problem 9
+
+(is-prime 269)
+(is-prime 3911)
+(not (is-prime 66487))
+
+;problem 10
+
+(let ([ans (goldbach 918)])
+    (and (and (= (+ (car ans) (cdr ans)) 918) (is-prime (car ans))) (is-prime (cdr ans))))
+(let ([ans (goldbach 8162)])
+    (and (and (= (+ (car ans) (cdr ans)) 8162) (is-prime (car ans))) (is-prime (cdr ans))))
